@@ -65,6 +65,7 @@ exec lighthouse \
 	--execution-endpoint $EXECUTION_ENDPOINT \
 	--execution-jwt /root/jwttoken/jwt.hex \
 	--allow-insecure-genesis-sync \
+	--prune-blobs false \
 	$METRICS_PARAMS \
 	$GRAFFITI_PARAM \
 	$ETH1_FLAG \
