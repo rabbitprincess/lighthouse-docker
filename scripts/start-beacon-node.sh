@@ -2,15 +2,11 @@
 #
 # Starts a beacon node.
 
-DEFAULT_NETWORK=mainnet
-
 if [ "$START_VALIDATOR" != "" ]; then
 	ETH1_FLAG=--eth1
 fi
 
-if [ "$NETWORK" = "" ]; then
-	NETWORK=$DEFAULT_NETWORK
-fi
+NETWORK=${NETWORK:-"mainnet"}
 
 if [ "$ENABLE_METRICS" != "" ]; then
 	METRICS_PARAMS="--metrics --metrics-address 0.0.0.0 "
@@ -62,9 +58,8 @@ exec lighthouse \
 	beacon_node \
 	--http \
 	--http-address 0.0.0.0 \
-	--execution-endpoint $EXECUTION_ENDPOINT \
+	--execution-endpoint http://geth:8551 \
 	--execution-jwt /root/jwttoken/jwt.hex \
-	--allow-insecure-genesis-sync \
 	--prune-blobs false \
 	$METRICS_PARAMS \
 	$GRAFFITI_PARAM \

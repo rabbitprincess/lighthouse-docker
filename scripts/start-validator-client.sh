@@ -1,11 +1,7 @@
 #! /bin/bash
 
-DEFAULT_NETWORK=mainnet
-
 # Set testnet name
-if [ "$NETWORK" = "" ]; then
-	NETWORK=$DEFAULT_NETWORK
-fi
+NETWORK=${NETWORK:-"mainnet"}
 
 if [ "$ENABLE_METRICS" != "" ]; then
   METRICS_PARAMS="--metrics --metrics-address 0.0.0.0 "
