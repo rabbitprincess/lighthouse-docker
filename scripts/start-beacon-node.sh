@@ -46,6 +46,8 @@ fi
 
 if [ "$CHECKPOINT_SYNC_URL" != "" ]; then
 	CHECKPOINT_SYNC_URL_PARAM="--checkpoint-sync-url $CHECKPOINT_SYNC_URL"
+else
+	CHECKPOINT_SYNC_URL_PARAM="--allow-insecure-genesis-sync"
 fi
 
 if [ "$SUGGESTED_FEE_RECIPIENT" != "" ]; then
