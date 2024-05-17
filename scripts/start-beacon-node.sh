@@ -45,7 +45,7 @@ if [ "$ENABLE_FULL_NETWORK_VIEW" != "" ]; then
 fi
 
 if [ "$CHECKPOINT_SYNC_URL" != "" ]; then
-	CHECKPOINT_SYNC_URL_PARAM="--checkpoint-sync-url $CHECKPOINT_SYNC_URL"
+	CHECKPOINT_SYNC_URL_PARAM="--checkpoint-sync-url $CHECKPOINT_SYNC_URL --genesis-backfill"
 else
 	CHECKPOINT_SYNC_URL_PARAM="--allow-insecure-genesis-sync"
 fi
